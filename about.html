@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About Kevi Wise — five decades of building, losing, and rebuilding businesses across Ireland and beyond. The story behind the MentorMy series.">
+<title>About Kevi Wise — Wisdom lived. Honestly shared.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--navy:#0D1F3C;--green:#059142;--green-light:#E8F5EE;--cream:#FAF7F2;--warm:#F0EBE1;--text:#1A1A1A;--muted:#6B7080;--border:#DDD8CE;--white:#FFFFFF;--gold:#C8922A;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);font-size:16px;line-height:1.7;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 5%;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--white);z-index:100;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--navy);text-decoration:none;}
+.nav-logo span{color:var(--green);}
+.nav-links{display:flex;gap:32px;align-items:center;list-style:none;}
+.nav-links a{text-decoration:none;font-size:14px;color:var(--muted);transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--navy);}
+.nav-cta{background:var(--green);color:#fff !important;padding:10px 22px;border-radius:4px;font-weight:500 !important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;border:none;background:none;padding:4px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--white);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:32px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:24px;font-family:'Cormorant Garamond',serif;color:var(--navy);text-decoration:none;font-weight:700;}
+.mobile-close{position:absolute;top:24px;right:5%;font-size:28px;cursor:pointer;color:var(--navy);background:none;border:none;}
+
+/* PAGE HERO */
+.page-hero{background:var(--cream);padding:80px 5% 72px;}
+.page-hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.page-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:16px;}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,64px);font-weight:700;color:var(--navy);line-height:1.1;margin-bottom:20px;}
+.page-hero h1 em{font-style:italic;color:var(--green);}
+.page-hero-sub{font-size:17px;color:var(--muted);line-height:1.75;max-width:480px;}
+.kevi-portrait{background:var(--navy);border-radius:12px;padding:40px 32px;text-align:center;color:#fff;box-shadow:8px 8px 0 var(--green);}
+.kevi-monogram{width:100px;height:100px;border-radius:50%;background:var(--green);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;}
+.kevi-portrait h2{font-family:'Cormorant Garamond',serif;font-size:28px;margin-bottom:8px;}
+.kevi-tagline{font-size:13px;font-style:italic;color:#7EEAA0;margin-bottom:24px;}
+.kevi-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.kevi-stat{background:rgba(255,255,255,0.06);border-radius:8px;padding:14px;}
+.kevi-stat-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#fff;}
+.kevi-stat-label{font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px;}
+
+/* STORY */
+.story-section{padding:80px 5%;}
+.story-inner{max-width:780px;margin:0 auto;}
+.section-label{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:12px;display:block;}
+.story-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.5vw,46px);font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:28px;}
+.story-inner p{font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:22px;}
+.story-inner p strong{color:var(--text);font-weight:500;}
+.pull-quote{border-left:4px solid var(--green);padding:20px 24px;margin:36px 0;background:var(--green-light);border-radius:0 10px 10px 0;}
+.pull-quote p{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--navy);line-height:1.6;margin:0;}
+
+/* TIMELINE */
+.timeline-section{background:var(--cream);padding:80px 5%;}
+.timeline-inner{max-width:900px;margin:0 auto;}
+.timeline-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:48px;}
+.timeline{position:relative;padding-left:32px;}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--green);}
+.timeline-item{position:relative;margin-bottom:36px;padding-left:20px;}
+.timeline-item::before{content:'';position:absolute;left:-37px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--green);border:2px solid var(--white);}
+.timeline-year{font-size:11px;font-weight:600;letter-spacing:0.1em;color:var(--green);text-transform:uppercase;margin-bottom:4px;}
+.timeline-item h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.timeline-item p{font-size:14px;color:var(--muted);line-height:1.65;margin:0;}
+
+/* VALUES */
+.values-section{padding:80px 5%;}
+.values-inner{max-width:1200px;margin:0 auto;}
+.values-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:12px;}
+.values-inner>p{font-size:16px;color:var(--muted);max-width:580px;margin-bottom:40px;line-height:1.7;}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+.value-card{border:0.5px solid var(--border);border-radius:8px;padding:24px;background:var(--white);}
+.value-icon{font-size:28px;margin-bottom:12px;}
+.value-card h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.value-card p{font-size:14px;color:var(--muted);line-height:1.65;margin:0;}
+
+/* CTA */
+.about-cta{background:var(--navy);padding:80px 5%;text-align:center;}
+.about-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,50px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:14px;}
+.about-cta p{font-size:17px;color:rgba(255,255,255,0.6);max-width:520px;margin:0 auto 36px;line-height:1.7;}
+.btn-primary{background:var(--green);color:#fff;padding:16px 36px;border-radius:4px;font-size:16px;font-weight:500;text-decoration:none;display:inline-block;transition:background 0.2s;}
+.btn-primary:hover{background:#047535;}
+.about-tagline{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:#7EEAA0;margin-top:40px;}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,0.45);padding:48px 5% 32px;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-bottom{border-top:0.5px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-size:13px;}
+.footer-bottom a{color:rgba(255,255,255,0.45);text-decoration:none;}
+.footer-brand-line{display:flex;align-items:center;gap:24px;margin-bottom:32px;flex-wrap:wrap;}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
+.footer-links a{text-decoration:none;font-size:14px;color:rgba(255,255,255,0.45);}
+.footer-links a:hover{color:#fff;}
+
+@media(max-width:900px){
+  .page-hero-inner{grid-template-columns:1fr;gap:40px;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Kevi<span>Wise</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="guides.html">Guides</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="guides.html" class="nav-cta">Browse all guides</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.add('open')" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu">
+  <button class="mobile-close" onclick="document.querySelector('.mobile-menu').classList.remove('open')">&times;</button>
+  <a href="index.html" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Home</a>
+  <a href="about.html" onclick="document.querySelector('.mobile-menu').classList.remove('open')">About</a>
+  <a href="guides.html" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Guides</a>
+  <a href="contact.html" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <p class="page-eyebrow">About Kevi Wise</p>
+      <h1>Built more than a business.<br>Built a <em>life in commerce.</em></h1>
+      <p class="page-hero-sub">Fifth of ten children. First job at twelve. Garden centres, flower shops, fast food, investment training, B&Bs, tour guiding — and everything learned along the way, written down so you don't have to learn it the hard way too.</p>
+    </div>
+    <div class="kevi-portrait">
+      <div class="kevi-monogram">KW</div>
+      <h2>Kevi Wise</h2>
+      <p class="kevi-tagline">Wisdom lived · Honestly shared</p>
+      <div class="kevi-stat-grid">
+        <div class="kevi-stat"><div class="kevi-stat-num">50+</div><div class="kevi-stat-label">Years in business</div></div>
+        <div class="kevi-stat"><div class="kevi-stat-num">10+</div><div class="kevi-stat-label">Businesses built</div></div>
+        <div class="kevi-stat"><div class="kevi-stat-num">2</div><div class="kevi-stat-label">Recessions survived</div></div>
+        <div class="kevi-stat"><div class="kevi-stat-num">20</div><div class="kevi-stat-label">Guides written</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STORY -->
+<div class="story-section">
+  <div class="story-inner">
+    <span class="section-label">The story</span>
+    <h2>Not a lecture. A life.</h2>
+    <p>Kevi Wise grew up the fifth of ten children on a farm in the west of Ireland. Not a wealthy farm. A working farm, where the expectation was that you contributed from early on and complained about it almost never. He started his first paid job at twelve — a plant nursery near his home, carrying bags and learning the difference between a perennial and an annual while most of his classmates were still figuring out what they wanted to be.</p>
+    <p>By seventeen he was working three jobs simultaneously: the plant nursery, a service station, and a bar. He handed half his wages to his mother each week. He didn't consider this unusual. It was just what you did.</p>
+    <p><strong>The businesses came one at a time, each one teaching him something the previous one hadn't.</strong> The garden centre taught him about perishable inventory and seasonal cash flow. The fast food business taught him about labour management and speed of service. The investment training company — which at its peak was running programmes across Ireland and into the United States — taught him about scaling, about brand, about the particular challenge of selling knowledge to people who aren't sure they need it until they do.</p>
+    <div class="pull-quote">
+      <p>"Every business I built taught me something. Every business I lost taught me more. The ones I lost hurt at the time. Looking back, they were the ones that made me better."</p>
+    </div>
+    <p>He ran a B&B. A flower shop. He drove commercially. He guided tours. He survived the 2008 crash. He survived the 2020 pandemic. He went through a marriage separation in 2018 that tested everything he thought he knew about resilience.</p>
+    <p><strong>Through all of it, one thing remained constant: his mother's phone was the first call he made when something went wrong.</strong> She was in her late eighties and she had never run a business in the formal sense, but she understood people and she understood what mattered. He still thinks that might be the most important business education he ever received.</p>
+    <p>The MentorMy series is the attempt to pass on what fifty years of doing it in the real world taught him. Not theory from a business school. Not frameworks from a consultant who has never had to make payroll. The things he learned the expensive way — written down clearly and honestly, for the people who are sitting at the table he once sat at and wondering how to make it work.</p>
+    <div class="pull-quote">
+      <p>"I am not writing these guides as someone who got everything right. I am writing them as someone who got enough things wrong to know what the right things are. That's a different kind of credential — and in my experience, it's the more useful one."</p>
+    </div>
+    <p>He lives in the midlands of Ireland. His mother is still his first call.</p>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<div class="timeline-section">
+  <div class="timeline-inner">
+    <span class="section-label">The business journey</span>
+    <h2>Fifty years of building something.</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <p class="timeline-year">Age 12</p>
+        <h3>First job — plant nursery</h3>
+        <p>Carrying bags, learning stock, and understanding that plants are perishable in ways that would later inform everything he knew about inventory management in his garden centre and flower shop.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">Age 17</p>
+        <h3>Three jobs simultaneously</h3>
+        <p>Plant nursery, service station, and bar work. Half his wages to his mother every week. The discipline of managing time and energy across multiple commitments became second nature here.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">Early career</p>
+        <h3>Garden centre — seven years</h3>
+        <p>Built from the ground up, operated for seven years, and ultimately sold at a loss during a difficult period. The garden centre taught him about seasonal trading, perishable stock, and the critical importance of cash flow management in retail.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">Following years</p>
+        <h3>Fast food and hospitality</h3>
+        <p>A fast food takeaway operation that rebuilt his cash position and taught him about labour management, speed of service, and the operational discipline that separates a profitable food business from an unprofitable one.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">Peak years</p>
+        <h3>Investment training — Ireland and America</h3>
+        <p>Built an investment training company that grew to run over seventy investing clubs across Ireland and into the United States. His first experience of scaling a knowledge-based business and of the particular challenges of selling education to people who are simultaneously interested and sceptical.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">Continued</p>
+        <h3>B&B, flower shop, commercial driving, tour guiding</h3>
+        <p>Each business adding to the body of knowledge that would eventually become the MentorMy series. The flower shop in particular — the perishable inventory, the emotional stakes, the seasonal pattern — would provide the foundation for the first guide in the series.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">2008 and 2020</p>
+        <h3>Two recessions. One pandemic.</h3>
+        <p>Each crisis required adaptation, pivoting, and the willingness to start again if necessary. The businesses that survived these periods were the ones with recurring income, managed costs, and documented systems. The MentorMy series is built around these survival lessons.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">Now</p>
+        <h3>The MentorMy series</h3>
+        <p>Twenty practical business guides for the most commonly started small businesses in the English-speaking world. Everything learned in fifty years of doing it, written down for the people who are starting where he started.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VALUES -->
+<div class="values-section">
+  <div class="values-inner">
+    <span class="section-label">What the guides are built on</span>
+    <h2>The principles behind every MentorMy guide.</h2>
+    <p>These are not values invented for a website. They are the principles that emerged from fifty years of building businesses in the real world.</p>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">📋</div>
+        <h3>Honesty above comfort</h3>
+        <p>These guides tell you what you need to know, not what you want to hear. The florist business is genuinely hard. The coffee shop business is genuinely complex. Knowing that before you start is the most useful thing anyone can tell you.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💶</div>
+        <h3>The numbers always matter</h3>
+        <p>Every MentorMy guide treats financial management as a core competency, not an afterthought. Passion is the fuel. The numbers are the engine. Both are required.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔄</div>
+        <h3>Recurring income first</h3>
+        <p>Every guide in the series prioritises the development of recurring, predictable income from day one. The business that generates the same income every month before it sells a single additional product is a fundamentally more resilient business than one that depends on constant new sales.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📄</div>
+        <h3>Build to be worth selling</h3>
+        <p>A business built with the exit in mind is a better business. Documented systems, independent management, and diversified revenue make the business better while you own it and more valuable when the time comes.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>Serve the person, not just the sale</h3>
+        <p>The best businesses in any sector are built on genuine service to the customer. The florist who remembers what flowers you bought for your mother's funeral. The cleaner who notices the leak under the sink and mentions it. These are the businesses that generate the referrals that no advertising can buy.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📈</div>
+        <h3>Wisdom is earned, not awarded</h3>
+        <p>The knowledge in these guides was not obtained from a degree programme or a certification. It was earned in the ways that leave marks — through businesses that failed, through crises that required invention, and through the long, slow accumulation of experience that comes from doing the work every day for fifty years.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="about-cta">
+  <span class="section-label" style="color:#7EEAA0;">Start reading</span>
+  <h2>Find the guide for the business you want to build.</h2>
+  <p>Twenty practical guides. Every small business you've thought about starting. Standard Edition from $27, Complete Edition from $47.</p>
+  <a href="guides.html" class="btn-primary">Browse all 20 guides</a>
+  <p class="about-tagline">Wisdom lived · Honestly shared</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand-line">
+      <a href="index.html" class="nav-logo" style="color:#fff;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;text-decoration:none;">Kevi<span style="color:#7EEAA0;">Wise</span></a>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="guides.html">Guides</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kevi Wise. All rights reserved.</p>
+      <p><a href="contact.html">hello@keviwise.com</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

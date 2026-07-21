@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The complete MentorMy series by Kevi Wise — 20 practical business guides covering every small business from first day to exit. Standard $27, Complete $47.">
+<title>All 20 MentorMy Guides — Kevi Wise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--navy:#0D1F3C;--green:#059142;--green-light:#E8F5EE;--green-mid:#C3E6D0;--cream:#FAF7F2;--warm:#F0EBE1;--text:#1A1A1A;--muted:#6B7080;--border:#DDD8CE;--white:#FFFFFF;--gold:#C8922A;--gold-light:#FDF6E9;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);font-size:16px;line-height:1.7;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 5%;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--white);z-index:100;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--navy);text-decoration:none;}
+.nav-logo span{color:var(--green);}
+.nav-links{display:flex;gap:32px;align-items:center;list-style:none;}
+.nav-links a{text-decoration:none;font-size:14px;color:var(--muted);transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--navy);}
+.nav-cta{background:var(--green);color:#fff !important;padding:10px 22px;border-radius:4px;font-weight:500 !important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;border:none;background:none;padding:4px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--white);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:32px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:24px;font-family:'Cormorant Garamond',serif;color:var(--navy);text-decoration:none;font-weight:700;}
+.mobile-close{position:absolute;top:24px;right:5%;font-size:28px;cursor:pointer;color:var(--navy);background:none;border:none;}
+
+.page-hero{background:var(--cream);padding:72px 5% 64px;}
+.page-hero-inner{max-width:1200px;margin:0 auto;}
+.page-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:14px;}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,4.5vw,60px);font-weight:700;color:var(--navy);line-height:1.1;margin-bottom:16px;}
+.page-hero h1 em{font-style:italic;color:var(--green);}
+.page-hero-sub{font-size:17px;color:var(--muted);line-height:1.75;max-width:600px;margin-bottom:28px;}
+.edition-pills{display:flex;gap:10px;flex-wrap:wrap;}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;padding:8px 16px;border-radius:20px;}
+.pill-green{background:var(--green-light);color:var(--green);border:1px solid var(--green-mid);}
+.pill-gold{background:var(--gold-light);color:var(--gold);border:1px solid #F0C97A;}
+
+.section-label{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:12px;display:block;}
+
+/* GUIDE CATEGORIES */
+.guides-section{padding:72px 5%;}
+.guides-section-inner{max-width:1200px;margin:0 auto;}
+.category-label{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;margin-top:48px;padding-bottom:10px;border-bottom:0.5px solid var(--border);}
+.category-label:first-child{margin-top:0;}
+.guides-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;}
+.guide-card{border:0.5px solid var(--border);border-radius:10px;padding:24px;background:var(--white);transition:border-color 0.2s,box-shadow 0.2s,transform 0.15s;display:flex;flex-direction:column;}
+.guide-card:hover{border-color:var(--green);box-shadow:0 6px 24px rgba(5,145,66,0.08);transform:translateY(-2px);}
+.guide-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;}
+.guide-num{font-size:10px;font-weight:500;letter-spacing:0.1em;color:var(--green);text-transform:uppercase;}
+.new-badge{font-size:10px;font-weight:600;padding:3px 8px;border-radius:10px;background:var(--green-light);color:var(--green);}
+.guide-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.2;}
+.guide-card p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:16px;flex:1;}
+.guide-chapters{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;}
+.chapter-pill{font-size:11px;padding:3px 8px;border-radius:6px;background:var(--cream);color:var(--muted);border:0.5px solid var(--border);}
+.guide-prices{display:flex;gap:10px;align-items:center;margin-bottom:16px;}
+.price-std{font-size:14px;font-weight:500;color:var(--green);}
+.price-cmp{font-size:14px;font-weight:500;color:var(--gold);}
+.price-divider{font-size:12px;color:var(--border);}
+.guide-cta{display:flex;gap:8px;}
+.btn-sm-green{background:var(--green);color:#fff;border:none;padding:10px 16px;border-radius:4px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;transition:background 0.2s;}
+.btn-sm-green:hover{background:#047535;}
+.btn-sm-gold{background:var(--gold);color:#fff;border:none;padding:10px 16px;border-radius:4px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;transition:opacity 0.2s;}
+.btn-sm-gold:hover{opacity:0.88;}
+
+/* BUNDLES */
+.bundles-section{background:var(--navy);padding:72px 5%;}
+.bundles-inner{max-width:1200px;margin:0 auto;}
+.bundles-inner .section-label{color:#7EEAA0;}
+.bundles-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:12px;}
+.bundles-inner>p{color:rgba(255,255,255,0.6);font-size:16px;max-width:580px;margin-bottom:40px;line-height:1.7;}
+.bundles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+.bundle-card{background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.1);border-radius:10px;padding:24px;}
+.bundle-name{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#7EEAA0;margin-bottom:8px;}
+.bundle-card h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:6px;}
+.bundle-card p{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.55;margin-bottom:16px;}
+.bundle-price{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:700;color:#fff;margin-bottom:4px;}
+.bundle-saving{font-size:12px;color:#7EEAA0;margin-bottom:16px;}
+.btn-bundle{display:block;text-align:center;background:rgba(255,255,255,0.1);color:#fff;border:0.5px solid rgba(255,255,255,0.2);padding:10px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:500;transition:background 0.2s;}
+.btn-bundle:hover{background:rgba(255,255,255,0.18);}
+
+/* FAQ */
+.faq-section{padding:72px 5%;background:var(--warm);}
+.faq-inner{max-width:800px;margin:0 auto;}
+.faq-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,42px);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:36px;}
+.faq-item{border-bottom:0.5px solid var(--border);padding:22px 0;}
+.faq-item h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--navy);margin-bottom:9px;}
+.faq-item p{color:var(--muted);font-size:15px;line-height:1.7;margin:0;}
+
+footer{background:var(--navy);color:rgba(255,255,255,0.45);padding:48px 5% 32px;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-bottom{border-top:0.5px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-size:13px;}
+.footer-bottom a{color:rgba(255,255,255,0.45);text-decoration:none;}
+.footer-brand-line{display:flex;align-items:center;gap:24px;margin-bottom:32px;flex-wrap:wrap;}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
+.footer-links a{text-decoration:none;font-size:14px;color:rgba(255,255,255,0.45);}
+.footer-links a:hover{color:#fff;}
+
+@media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Kevi<span>Wise</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="guides.html" class="active">Guides</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="guides.html" class="nav-cta">Browse all guides</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.add('open')" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu">
+  <button class="mobile-close" onclick="document.querySelector('.mobile-menu').classList.remove('open')">&times;</button>
+  <a href="index.html" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Home</a>
+  <a href="about.html" onclick="document.querySelector('.mobile-menu').classList.remove('open')">About</a>
+  <a href="guides.html" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Guides</a>
+  <a href="contact.html" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">The MentorMy Series</p>
+    <h1>Twenty guides.<br>Every business you want to <em>build.</em></h1>
+    <p class="page-hero-sub">Each guide follows the same ten-chapter structure — from first-day research through to multiple locations, franchising, and exit strategy. Two editions for every guide.</p>
+    <div class="edition-pills">
+      <span class="pill" style="background:#E8F0FE;color:#1A6BAD;border:1px solid #B8D0F8;">✓ Basic Edition — $17 &nbsp;·&nbsp; Chapters 1–5 &nbsp;·&nbsp; 5,000 words &nbsp;·&nbsp; Kindle $9.99</span>
+      <span class="pill pill-green">✓ Standard Edition — $27 &nbsp;·&nbsp; Chapters 1–7 &nbsp;·&nbsp; 7,000 words</span>
+      <span class="pill pill-gold">⭐ Complete Edition — $47 &nbsp;·&nbsp; Chapters 1–10 &nbsp;·&nbsp; 10,000 words</span>
+    </div>
+  </div>
+</div>
+
+<!-- GUIDES -->
+<div class="guides-section">
+  <div class="guides-section-inner">
+
+    <p class="category-label">Service businesses — digital &amp; remote</p>
+    <div class="guides-grid">
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 01</p></div>
+        <h3>Florist Business</h3>
+        <p>From your first bunch of flowers to a franchise network and a profitable exit. The complete florist business lifecycle — including the seasonal calendar, wedding market, and corporate accounts.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Research</span><span class="chapter-pill">Planning</span><span class="chapter-pill">Seasonal year</span><span class="chapter-pill">Exit strategy</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 02</p></div>
+        <h3>Personal Training Business</h3>
+        <p>Build a PT business that grows beyond your own available hours — through group training, online programmes, digital products, and a scalable fitness brand.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Research</span><span class="chapter-pill">Pricing</span><span class="chapter-pill">Online income</span><span class="chapter-pill">Franchising</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 03</p></div>
+        <h3>Social Media Management</h3>
+        <p>From first retainer client to agency owner — the full SMM business arc including niche selection, platform strategy, paid advertising, and white-label partnerships.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Niche</span><span class="chapter-pill">Retainers</span><span class="chapter-pill">Agency model</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 04</p></div>
+        <h3>Virtual Assistant Business</h3>
+        <p>Build a VA practice with recurring retainers, specialist skills, digital products, and genuine enterprise value — from solo operator to agency to franchise.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Niche</span><span class="chapter-pill">Retainers</span><span class="chapter-pill">Digital products</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 05</p></div>
+        <h3>Online Tutoring Business</h3>
+        <p>From first student to digital courses, group programmes, subscription membership, and teacher training — the full tutoring business lifecycle.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Specialism</span><span class="chapter-pill">Group programmes</span><span class="chapter-pill">Courses</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 06</p></div>
+        <h3>Photography Business</h3>
+        <p>Wedding, portrait, and commercial photography built as a real business — with print product sales, corporate retainers, and digital education income.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Segment</span><span class="chapter-pill">Portfolio</span><span class="chapter-pill">Print sales</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 15</p></div>
+        <h3>Graphic Design &amp; Branding</h3>
+        <p>From first logo client to design agency — with retainer clients, digital templates, agency partnerships, and an online education income stream.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Niche</span><span class="chapter-pill">Pricing</span><span class="chapter-pill">Retainers</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+    </div>
+
+    <p class="category-label">Trades &amp; local services</p>
+    <div class="guides-grid">
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 07</p></div>
+        <h3>Cleaning Business</h3>
+        <p>Build the recurring client base that turns a cleaning round into a cleaning company — with commercial contracts, specialist services, and a scalable team.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Segments</span><span class="chapter-pill">Recurring income</span><span class="chapter-pill">Commercial</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 08</p></div>
+        <h3>Dog Walking &amp; Pet Care</h3>
+        <p>From first walking client to pet care agency — trust is the product, and the referral network in pet care is more powerful than in almost any other local business.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Services</span><span class="chapter-pill">Retention</span><span class="chapter-pill">Boarding</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 09</p></div>
+        <h3>Gardening &amp; Landscaping</h3>
+        <p>Maintenance rounds, high-value landscaping projects, lawn care programmes, and commercial grounds contracts — the complete gardening business lifecycle.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Maintenance</span><span class="chapter-pill">Landscaping</span><span class="chapter-pill">Commercial</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 10</p></div>
+        <h3>Handyperson &amp; Home Maintenance</h3>
+        <p>Landlord contracts, maintenance rounds, and specialist services — building the reliable, recurring income that turns a handyperson into a home maintenance business.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Services</span><span class="chapter-pill">Landlords</span><span class="chapter-pill">Contracts</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 16</p></div>
+        <h3>Mobile Beauty &amp; Hair</h3>
+        <p>Build a mobile beauty and hair business on trust and referrals — with bridal bookings, corporate wellness events, and pamper party income alongside your regular client base.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Services</span><span class="chapter-pill">Bridal</span><span class="chapter-pill">Corporate</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+    </div>
+
+    <p class="category-label">Food &amp; hospitality</p>
+    <div class="guides-grid">
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 11</p></div>
+        <h3>Coffee Shop Business</h3>
+        <p>Quality, community, and the financial discipline that makes a café genuinely profitable — with the daily, weekly, and seasonal metrics every coffee shop owner must track.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Location</span><span class="chapter-pill">Margins</span><span class="chapter-pill">Loyalty</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 12</p></div>
+        <h3>Food Truck Business</h3>
+        <p>Markets, festivals, private events, and corporate catering — building the food truck business that generates predictable income beyond the vagaries of footfall.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Concept</span><span class="chapter-pill">Events</span><span class="chapter-pill">Private hire</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 13</p></div>
+        <h3>Home Baking &amp; Cake Business</h3>
+        <p>From domestic kitchen to commercial operation — pricing your baking correctly, building the wedding cake business, and developing the workshop and digital income streams that scale your practice.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Pricing</span><span class="chapter-pill">Weddings</span><span class="chapter-pill">Workshops</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 14</p></div>
+        <h3>Private Chef &amp; Meal Prep</h3>
+        <p>The premium end of food service — regular household meal preparation, private dinner parties, retreat catering, and the subscription meal prep model that scales the business.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Pricing</span><span class="chapter-pill">Events</span><span class="chapter-pill">Subscriptions</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+    </div>
+
+    <p class="category-label">Health, wellness &amp; coaching</p>
+    <div class="guides-grid">
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 18</p></div>
+        <h3>Nutrition &amp; Health Coaching</h3>
+        <p>Build a health coaching practice on genuine outcomes — with group programmes, corporate wellness, and digital products that scale beyond your billable hours.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Scope</span><span class="chapter-pill">Programmes</span><span class="chapter-pill">Corporate</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 19</p></div>
+        <h3>Yoga &amp; Pilates Instruction</h3>
+        <p>From first class to studio to teacher training school — the complete yoga and Pilates business lifecycle including retreats, online membership, and corporate wellness.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Classes</span><span class="chapter-pill">Retreats</span><span class="chapter-pill">Teacher training</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 20</p></div>
+        <h3>Life Coaching &amp; Mindset</h3>
+        <p>Build a coaching practice that changes lives and generates sustainable income — through signature programmes, group coaching, corporate clients, and speaking engagements.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Niche</span><span class="chapter-pill">Programmes</span><span class="chapter-pill">Corporate</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+    </div>
+
+    <p class="category-label">Creative &amp; maker businesses</p>
+    <div class="guides-grid">
+      <div class="guide-card">
+        <div class="guide-header"><p class="guide-num">Guide 17</p></div>
+        <h3>Handmade Crafts &amp; Etsy</h3>
+        <p>Build an Etsy business that generates real income — with correct pricing, professional photography, keyword strategy, digital downloads, and wholesale development.</p>
+        <div class="guide-chapters"><span class="chapter-pill">Pricing</span><span class="chapter-pill">Etsy SEO</span><span class="chapter-pill">Digital downloads</span><span class="chapter-pill">Exit</span></div>
+        <div class="guide-prices"><span style="font-size:13px;font-weight:500;color:#1A6BAD;">$17 Basic</span><span class="price-divider">·</span><span class="price-std">$27 Standard</span><span class="price-divider">·</span><span class="price-cmp">$47 Complete</span></div>
+        <div class="guide-cta"><a href="contact.html" class="btn-sm-green">Get Standard — $27</a><a href="contact.html" class="btn-sm-gold">Get Complete — $47</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BUNDLES -->
+<div class="bundles-section">
+  <div class="bundles-inner">
+    <span class="section-label">Save with bundles</span>
+    <h2>Buy more. Pay less. Build more.</h2>
+    <p>Every bundle is available across any combination of the 20 MentorMy guides, in any edition. Mix and match Basic, Standard, and Complete across any industries.</p>
+    <div class="bundles-grid">
+      <div class="bundle-card">
+        <p class="bundle-name">Starter bundle</p>
+        <h3>Any 3 guides</h3>
+        <p>Pick any three Standard Edition guides from the full series.</p>
+        <div class="bundle-price">$57</div>
+        <p class="bundle-saving">Save $24 vs buying separately</p>
+        <a href="contact.html" class="btn-bundle">Get starter bundle →</a>
+      </div>
+      <div class="bundle-card">
+        <p class="bundle-name">Collection</p>
+        <h3>Any 5 guides</h3>
+        <p>Pick any five Standard Edition guides from the full series.</p>
+        <div class="bundle-price">$87</div>
+        <p class="bundle-saving">Save $48 vs buying separately</p>
+        <a href="contact.html" class="btn-bundle">Get collection →</a>
+      </div>
+      <div class="bundle-card">
+        <p class="bundle-name">Full series</p>
+        <h3>All 20 guides</h3>
+        <p>The complete MentorMy series — all 20 Standard Edition guides.</p>
+        <div class="bundle-price">$197</div>
+        <p class="bundle-saving">Save $343 vs buying separately</p>
+        <a href="contact.html" class="btn-bundle">Get full series →</a>
+      </div>
+      <div class="bundle-card">
+        <p class="bundle-name">Monthly subscription</p>
+        <h3>New guide monthly</h3>
+        <p>A new MentorMy guide delivered every month as they publish.</p>
+        <div class="bundle-price">$17<span style="font-size:18px;font-weight:400;">/mo</span></div>
+        <p class="bundle-saving">Recurring value — cancel any time</p>
+        <a href="contact.html" class="btn-bundle">Subscribe →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <div class="faq-inner">
+    <span class="section-label">Questions</span>
+    <h2>Common questions answered</h2>
+    <div class="faq-item">
+      <h3>What's the difference between the three editions?</h3>
+      <p>The Basic Edition ($17) covers chapters 1–5 — research, planning, opening, building, and the month-by-month seasonal year. Everything you need to start and operate the business in your first one to two years. It is also available on Amazon Kindle at $9.99. The Standard Edition ($27) adds chapters 6 and 7 — expanding your income and maximising your profit — covering the full first three years of operation. The Complete Edition ($47) adds chapters 8, 9, and 10 — scaling to multiple locations, franchising, and exit strategy — covering the entire business lifecycle from opening day to a profitable sale.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are these guides relevant outside Ireland?</h3>
+      <p>Completely. Every guide in the MentorMy series is written for the global English-speaking market — Ireland, the UK, the United States, Australia, Canada, and New Zealand. Pricing examples are typically given in euros but every strategy, every framework, and every piece of business guidance applies universally across all these markets.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What format are the guides in?</h3>
+      <p>PDF, professionally formatted and branded. They download immediately after purchase and can be read on any device — phone, tablet, laptop — or printed. You keep them forever.</p>
+    </div>
+    <div class="faq-item">
+      <h3>I already have a business. Are these still useful?</h3>
+      <p>Many readers with existing businesses find the most value in the later chapters — expanding income, maximising profit, and in the Complete Edition, the scaling, franchising, and exit strategy chapters. The seasonal calendars and profit rankings are consistently cited by established business owners as content they wish they had found earlier.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I upgrade from Standard to Complete?</h3>
+      <p>Yes. Email hello@keviwise.com with your original purchase confirmation and we'll send you the upgrade to the Complete Edition for just $20 — the difference in price. No need to buy again.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the refund policy?</h3>
+      <p>30-day money-back guarantee on every guide and every bundle. Email hello@keviwise.com within 30 days of purchase for a full refund. No questions, no forms, no friction.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand-line">
+      <a href="index.html" class="nav-logo" style="color:#fff;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;text-decoration:none;">Kevi<span style="color:#7EEAA0;">Wise</span></a>
+      <div class="footer-links">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="guides.html">Guides</a><a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kevi Wise. All rights reserved.</p>
+      <p><a href="contact.html">hello@keviwise.com</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
